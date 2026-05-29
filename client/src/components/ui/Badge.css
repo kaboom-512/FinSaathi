@@ -1,0 +1,34 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.badge-primary {
+  background: var(--color-primary-subtle);
+  color: var(--color-primary-dark);
+}
+
+.badge-secondary {
+  background: var(--color-surface-hover);
+  color: var(--color-text-main);
+}
+
+.badge-success {
+  background: var(--color-secondary-subtle);
+  color: var(--color-secondary-dark);
+}
+
+.badge-warning {
+  background: #fef3c7; /* Amber 50 */
+  color: #b45309; /* Amber 700 */
+}
+
+.badge-danger {
+  background: var(--color-danger-subtle);
+  color: #b91c1c; /* Red 700 */
+}

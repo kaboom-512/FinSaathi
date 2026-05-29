@@ -1,0 +1,162 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.modal-content {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  width: 90%;
+  max-width: 500px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.type-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.type-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.type-btn.active.income {
+  background: var(--color-secondary-subtle);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.type-btn.active.expense {
+  background: var(--color-danger-subtle);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.voice-record-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--color-border);
+}
+
+.record-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
+}
+
+.record-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.record-btn.recording {
+  background: var(--color-danger);
+  animation: pulse 1.5s infinite;
+}
+
+.recording-status {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(var(--color-danger-rgb), 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(var(--color-danger-rgb), 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(var(--color-danger-rgb), 0); }
+}
